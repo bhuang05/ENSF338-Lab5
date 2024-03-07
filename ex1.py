@@ -1,3 +1,5 @@
+import sys
+
 class Stack:
     def __init__(self):
         self.items = []
@@ -12,6 +14,7 @@ class Stack:
         return self.items[-1]
 
 
+#function created with help from ChatGPT
 def evaluate(expression):
     stack = Stack()
     for char in expression:
@@ -35,10 +38,7 @@ def evaluate(expression):
                 stack.push(operand2 // operand)
     return stack.pop()
     
-        
-
-
-
-expression = input('Enter an expression: ')
+arguments = sys.argv[1:]
+expression = ' '.join(arguments)
 result = evaluate(expression)
 print(result)
