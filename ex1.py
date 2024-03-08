@@ -2,18 +2,17 @@ import sys
 
 class Stack:
     def __init__(self):
-        self.items = []
+        self._items = []
 
     def push(self, val):
-        self.items.append(val)
+        self._items.append(val)
 
     def pop(self):
-        return self.items.pop()
+        if not self._items:
+            return None
+        else:
+            return self._items.pop()
     
-    def peek(self):
-        return self.items[-1]
-
-
 #function created with help from ChatGPT
 def evaluate(expression):
     stack = Stack()
